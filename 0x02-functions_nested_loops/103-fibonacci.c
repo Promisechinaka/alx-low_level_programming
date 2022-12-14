@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - print sum of even Fionacci sequence up to 4,000,000
  * Return: 0
  */
@@ -8,7 +8,7 @@
 int main(void)
 {
 int sum_of_evens = 0;
-int a;
+iint a;
 int b;
 int sum = 1;
 a = 1;
