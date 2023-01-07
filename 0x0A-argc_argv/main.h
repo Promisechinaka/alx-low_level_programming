@@ -1,11 +1,10 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
-
-int main(int argc, char *argv[])
-int main(int argc, char *argv[] __attribute__((unused)))
-int main(int argc, char *argv[])
-int main(int argc, char *argv[])
-bool is_num(char *argvv)
-int main(int argc, char *argv[])
-
+#ifndef HEADERFILE_H
+#define HEADERFILE_H
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c);
 #endif
