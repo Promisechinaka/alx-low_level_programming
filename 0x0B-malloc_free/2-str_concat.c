@@ -1,40 +1,36 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings
+ * str_concat - concatenate strings
  * @s1: string 1
  * @s2: string 2
- * Return: pointer to concatenated string
+ * Return: NULL if failure
  */
 
 char *str_concat(char *s1, char *s2)
 {
-char *concat;
-int len1 = 0, len2 = 0, i = 0, j = 0;
-if (s1 == NULL)
+char *s;
+int a, b, c, d;
+if (s1 == 0)
 s1 = "";
-if (s2 == NULL)
+if (s2 == 0)
 s2 = "";
-while (*(s1 + i))
-len1++, i++;
-while (*(s2 + j))
-len2++, j++;
-len2++; /* add null terminator to length */
-concat = malloc(sizeof(char) * (len1 + len2)); /*alloc memory*/
-if (concat == NULL) /* validate memory */
+for (a = 0; s1[a] != '\0'; a++)
+;
+for (b = 0; s2[b] != '\0'; b++)
+;
+b++;
+s = malloc(a * sizeof(*s1) + b * sizeof(*s2));
+if (s == 0)
 return (NULL);
-i = 0, j = 0;
-*while (i < len1) /* concatenate */
+for (c = 0, d = 0; c < a + b; c++)
 {
-*(concat + i) = *(s1 + i);
-i++;
+if (c < a)
+s[c] = s1[c];
+else
+s[c] = s2[d++];
 }
-while (j < len2)
-{
-*(concat + i) = *(s2 + j);
-i++, j++;
-}
-return (concat);
+return (s);
 }
